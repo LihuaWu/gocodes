@@ -7,6 +7,7 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -40,9 +41,16 @@ func main() {
 		Timeout: 15 * time.Second,
 	}
 
+	// Make the program a flexible tool by accepting the URL as a command-line argument.
+	if len(os.Args) < 2 {
+		log.Fatalf("Usage: %s <URL>", os.Args[0])
+	}
+	url := os.Args[1]
+	fmt.Printf("Fetching URL: %s\n\n", url)
+
 	// Use the custom client's Get method. This request will now fail if it
 	// takes longer than 15 seconds to complete.
-	resp, err := client.Get("https://www.baidu.com")
+	resp, err := client.Get(url)
 	if err != nil {
 		// If the request fails (e.g., network error, DNS lookup failure, timeout),
 		// log the error and exit the program.

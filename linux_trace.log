@@ -1,3 +1,9 @@
+± |main ✓| → cat /etc/resolv.conf
+search adsde-lhwu-59c5e4448d3a45d6.svc.cluster.local svc.cluster.local cluster.local ec2.internal
+nameserver 172.20.0.10
+options ndots:5
+
+ strace -e trace=network ./http-client
 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=1998044, si_uid=0} ---
 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=1998044, si_uid=0} ---
 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=1998044, si_uid=0} ---

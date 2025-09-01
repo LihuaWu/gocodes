@@ -4,6 +4,10 @@ BINARY_NAME=http-client
 # Define the Go source files
 SRC=get_request_example.go
 
+# Define default arguments for the run commands. Can be overridden from the command line.
+# Example: make run ARGS=https://www.bing.com
+ARGS ?= https://www.google.com
+
 # Use .PHONY to declare targets that are not actual files.
 # This prevents conflicts with files of the same name and improves performance.
 .PHONY: all build build-netgo run run-debug run-debug-netgo fmt clean help
@@ -14,6 +18,8 @@ all: build
 # A self-documenting help target
 help:
 	@echo "Usage: make [target]"
+	@echo ""
+	@echo "You can override the default URL by passing ARGS. Example: make run ARGS=https://example.com"
 	@echo ""
 	@echo "Targets:"
 	@echo "  build           Build the application using the system's cgo resolver."
@@ -42,26 +48,26 @@ build-netgo: fmt
 # Run the compiled application
 run: build
 	@echo "Running the application..."
-	@./$(BINARY_NAME)
+	@./$(BINARY_NAME) $(ARGS)
 
 # Run the netgo-built application
 run-netgo: build-netgo
 	@echo "Running the netgo-built application..."
-	@./$(BINARY_NAME)
+	@./$(BINARY_NAME) $(ARGS)
 
 # Run the application with GODEBUG for verbose network logging
 # netdns=1: Traces DNS lookups.
 # http1trace=1: Traces HTTP/1.1 requests (since the code now forces HTTP/1.1).
 run-debug: build
 	@echo "Running with GODEBUG enabled..."
-	@GODEBUG=netdns=1,http1trace=1 ./$(BINARY_NAME)
+	@GODEBUG=netdns=1,http1trace=1 ./$(BINARY_NAME) $(ARGS)
 
 run-debug-netgo: build-netgo
 	@echo "Running netgo build with GODEBUG enabled..."
-	@GODEBUG=netdns=1,http1trace=1 ./$(BINARY_NAME)
+	@GODEBUG=netdns=1,http1trace=1 ./$(BINARY_NAME) $(ARGS)
 
 run-dtruss: build-netgo
-	@sudo dtruss -t socket -t connect -t read -t write ./$(BINARY_NAME)
+	@sudo dtruss -t socket -t connect -t read -t write ./$(BINARY_NAME) $(ARGS)
 
 # Format the Go source files
 fmt:
