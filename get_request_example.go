@@ -19,7 +19,7 @@ func main() {
 	// By default, Go's transport will try to negotiate HTTP/2.
 	// To force HTTP/1.1, we can create a transport and disable it.
 	transport := http.DefaultTransport.(*http.Transport).Clone()
-	transport.ForceAttemptHTTP2 = false // Disable HTTP/2 for this example
+	//transport.ForceAttemptHTTP2 = false // Disable HTTP/2 for this example
 
 	dialer := &net.Dialer{
 		Timeout:   30 * time.Second, // Timeout for the connection phase
