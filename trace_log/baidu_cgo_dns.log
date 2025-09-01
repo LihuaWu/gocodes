@@ -1,0 +1,46 @@
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+2025/09/01 21:06:42 --- Making Request #1 ---
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 5
+connect(5, {sa_family=AF_UNIX, sun_path="/run/systemd/resolve/io.systemd.Resolve"}, 42) = 0
+sendto(5, "{\"method\":\"io.systemd.Resolve.Re"..., 107, MSG_DONTWAIT|MSG_NOSIGNAL, NULL, 0) = 107
+recvfrom(5, 0x7f8ac433a010, 135152, MSG_DONTWAIT, NULL, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+recvfrom(5, "{\"parameters\":{\"addresses\":[{\"if"..., 135152, MSG_DONTWAIT, NULL, NULL) = 177
+socket(AF_NETLINK, SOCK_RAW|SOCK_CLOEXEC, NETLINK_ROUTE) = 5
+bind(5, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
+getsockname(5, {sa_family=AF_NETLINK, nl_pid=119445, nl_groups=00000000}, [12]) = 0
+sendto(5, [{nlmsg_len=20, nlmsg_type=RTM_GETADDR, nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=1756732002, nlmsg_pid=0}, {ifa_family=AF_UNSPEC, ...}], 20, 0, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 20
+recvmsg(5, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[[{nlmsg_len=76, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1756732002, nlmsg_pid=119445}, {ifa_family=AF_INET, ifa_prefixlen=8, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_HOST, ifa_index=if_nametoindex("lo")}, [[{nla_len=8, nla_type=IFA_ADDRESS}, inet_addr("127.0.0.1")], [{nla_len=8, nla_type=IFA_LOCAL}, inet_addr("127.0.0.1")], [{nla_len=7, nla_type=IFA_LABEL}, "lo"], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=116, tstamp=116}]]], [{nlmsg_len=88, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1756732002, nlmsg_pid=119445}, {ifa_family=AF_INET, ifa_prefixlen=20, ifa_flags=0, ifa_scope=RT_SCOPE_UNIVERSE, ifa_index=if_nametoindex("eth0")}, [[{nla_len=8, nla_type=IFA_ADDRESS}, inet_addr("172.27.150.185")], [{nla_len=8, nla_type=IFA_LOCAL}, inet_addr("172.27.150.185")], [{nla_len=8, nla_type=IFA_BROADCAST}, inet_addr("172.27.159.255")], [{nla_len=9, nla_type=IFA_LABEL}, "eth0"], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_NOPREFIXROUTE], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=1892153798, ifa_valid=1892153798, cstamp=752, tstamp=752}]]]], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 164
+recvmsg(5, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[[{nlmsg_len=72, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1756732002, nlmsg_pid=119445}, {ifa_family=AF_INET6, ifa_prefixlen=128, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_HOST, ifa_index=if_nametoindex("lo")}, [[{nla_len=20, nla_type=IFA_ADDRESS}, inet_pton(AF_INET6, "::1")], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=116, tstamp=116}], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT|IFA_F_NOPREFIXROUTE]]], [{nlmsg_len=72, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1756732002, nlmsg_pid=119445}, {ifa_family=AF_INET6, ifa_prefixlen=64, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_LINK, ifa_index=if_nametoindex("eth0")}, [[{nla_len=20, nla_type=IFA_ADDRESS}, inet_pton(AF_INET6, "fe80::c2a3:9e32:e241:c9f5")], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=749, tstamp=749}], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT|IFA_F_NOPREFIXROUTE]]]], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 144
+recvmsg(5, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[{nlmsg_len=20, nlmsg_type=NLMSG_DONE, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1756732002, nlmsg_pid=119445}, 0], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 20
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC, IPPROTO_IP) = 5
+connect(5, {sa_family=AF_INET, sin_port=htons(0), sin_addr=inet_addr("220.181.111.1")}, 16) = 0
+getsockname(5, {sa_family=AF_INET, sin_port=htons(50583), sin_addr=inet_addr("172.27.150.185")}, [28 => 16]) = 0
+connect(5, {sa_family=AF_UNSPEC, sa_data="\0\0\0\0\0\0\0\0\0\0\0\0\0\0"}, 16) = 0
+connect(5, {sa_family=AF_INET, sin_port=htons(0), sin_addr=inet_addr("220.181.111.232")}, 16) = 0
+getsockname(5, {sa_family=AF_INET, sin_port=htons(40068), sin_addr=inet_addr("172.27.150.185")}, [28 => 16]) = 0
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 5
+connect(5, {sa_family=AF_INET, sin_port=htons(443), sin_addr=inet_addr("220.181.111.1")}, 16) = -1 EINPROGRESS (Operation now in progress)
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=119445, si_uid=1000} ---
+Status: 200 OK
+Status Code: 200
+2025/09/01 21:06:43 --- Making Request #2 ---
+Status: 200 OK
+Status Code: 200
+2025/09/01 21:06:44 --- Making Request #3 ---
+Status: 200 OK
+Status Code: 200
+2025/09/01 21:06:45 --- Making Request #4 ---
+Status: 200 OK
+Status Code: 200
+2025/09/01 21:06:46 --- Making Request #5 ---
+Status: 200 OK
+Status Code: 200
++++ exited with 0 +++
