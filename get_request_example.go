@@ -50,8 +50,6 @@ func main() {
 
 				// Dial the first resolved IP address directly.
 				dialAddr := net.JoinHostPort(addrs[0], port)
-				log.Printf("Dialing first resolved IP: %s", dialAddr)
-
 				// Force the network to be 'tcp4' for IPv4 only.
 				return dialer.DialContext(ctx, "tcp4", dialAddr)
 			},
