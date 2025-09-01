@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"log"
@@ -19,12 +20,17 @@ func main() {
 	transport := http.DefaultTransport.(*http.Transport).Clone()
 	transport.ForceAttemptHTTP2 = false // Disable HTTP/2 for this example
 
-	// To force the use of IPv4, we must customize the DialContext.
-	// We create a dialer and tell it to only use the 'tcp4' network.
-	transport.DialContext = (&net.Dialer{
+	dialer := &net.Dialer{
 		Timeout:   30 * time.Second, // Timeout for the connection phase
 		KeepAlive: 30 * time.Second,
-	}).DialContext
+	}
+
+	// To force the use of IPv4, we must customize the DialContext.
+	// We create a closure that calls the dialer's DialContext method,
+	// but overrides the 'network' parameter to be 'tcp4'.
+	transport.DialContext = func(ctx context.Context, network, addr string) (net.Conn, error) {
+		return dialer.DialContext(ctx, "tcp4", addr)
+	}
 
 	client := &http.Client{
 		// The transport is responsible for the details of the HTTP transaction.
