@@ -26,6 +26,9 @@ func main() {
 func makeRequest(url string) error {
 	client := &http.Client{
 		Timeout: 15 * time.Second,
+		Transport: &http.Transport{
+			DisableKeepAlives: true,
+		},
 	}
 	resp, err := client.Get(url)
 	if err != nil {
