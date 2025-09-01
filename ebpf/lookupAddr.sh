@@ -1,0 +1,2 @@
+# Note: The function name is wrapped in quotes because it contains special characters.
+sudo bpftrace -e 'uprobe:./http-client:"net.(*Resolver).lookupIPAddr" { printf("Go DNS lookup for: %s\n", str(reg("ax"), reg("bx"))); }'
