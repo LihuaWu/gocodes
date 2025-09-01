@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -12,14 +13,18 @@ import (
 )
 
 func main() {
+	// Define command-line flags to control behavior.
+	enableHTTP2 := flag.Bool("http2", true, "Enable HTTP/2 protocol")
+	flag.Parse()
+
 	// Best practice: Don't use the default client in production code.
 	// Create a custom client with a reasonable timeout to prevent the program
 	// from hanging indefinitely. To control protocol versions, we customize the Transport.
 
 	// By default, Go's transport will try to negotiate HTTP/2.
-	// To force HTTP/1.1, we can create a transport and disable it.
+	// We can control this behavior with our flag.
 	transport := http.DefaultTransport.(*http.Transport).Clone()
-	//transport.ForceAttemptHTTP2 = false // Disable HTTP/2 for this example
+	transport.ForceAttemptHTTP2 = *enableHTTP2
 
 	dialer := &net.Dialer{
 		Timeout:   30 * time.Second, // Timeout for the connection phase
@@ -42,11 +47,11 @@ func main() {
 	}
 
 	// Make the program a flexible tool by accepting the URL as a command-line argument.
-	if len(os.Args) < 2 {
-		log.Fatalf("Usage: %s <URL>", os.Args[0])
+	if len(flag.Args()) < 1 {
+		log.Fatalf("Usage: %s [flags] <URL>", os.Args[0])
 	}
-	url := os.Args[1]
-	fmt.Printf("Fetching URL: %s\n\n", url)
+	url := flag.Args()[0]
+	fmt.Printf("Fetching URL: %s (HTTP/2 enabled: %v)\n\n", url, *enableHTTP2)
 
 	// Use the custom client's Get method. This request will now fail if it
 	// takes longer than 15 seconds to complete.
