@@ -60,6 +60,9 @@ run-debug-netgo: build-netgo
 	@echo "Running netgo build with GODEBUG enabled..."
 	@GODEBUG=netdns=1,http1trace=1 ./$(BINARY_NAME)
 
+run-dtruss: build-netgo
+	@sudo dtruss -t socket -t connect -t read -t write ./$(BINARY_NAME)
+
 # Format the Go source files
 fmt:
 	@echo "Formatting source code..."

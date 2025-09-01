@@ -27,7 +27,7 @@ func main() {
 
 	// Use the custom client's Get method. This request will now fail if it
 	// takes longer than 15 seconds to complete.
-	resp, err := client.Get("https://www.g.cn")
+	resp, err := client.Get("https://www.baidu.com")
 	if err != nil {
 		// If the request fails (e.g., network error, DNS lookup failure, timeout),
 		// log the error and exit the program.
@@ -45,18 +45,10 @@ func main() {
 	fmt.Printf("Status Code: %d\n", resp.StatusCode)
 
 	// Read the entire response body.
-	body, err := io.ReadAll(resp.Body)
+	_, err = io.ReadAll(resp.Body)
 	if err != nil {
 		// If there's an error reading the response body, log it and exit.
 		log.Fatalf("Error reading response body: %v", err)
 	}
 
-	// The response body from Google is very large, so for this example,
-	// we'll just print the first 500 bytes to keep the output clean.
-	fmt.Println("\n--- Response Body (first 500 bytes) ---")
-	if len(body) > 500 {
-		fmt.Println(string(body[:500]))
-	} else {
-		fmt.Println(string(body))
-	}
 }
