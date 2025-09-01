@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"net"
 	"net/http"
 	"time"
 )
@@ -16,12 +17,20 @@ func main() {
 	// By default, Go's transport will try to negotiate HTTP/2.
 	// To force HTTP/1.1, we can create a transport and disable it.
 	transport := http.DefaultTransport.(*http.Transport).Clone()
-	transport.ForceAttemptHTTP2 = false // Disable HTTP/2
+	transport.ForceAttemptHTTP2 = false // Disable HTTP/2 for this example
+
+	// To force the use of IPv4, we must customize the DialContext.
+	// We create a dialer and tell it to only use the 'tcp4' network.
+	transport.DialContext = (&net.Dialer{
+		Timeout:   30 * time.Second, // Timeout for the connection phase
+		KeepAlive: 30 * time.Second,
+	}).DialContext
 
 	client := &http.Client{
 		// The transport is responsible for the details of the HTTP transaction.
 		Transport: transport,
 		// The client-level timeout covers the entire exchange.
+		// Note: The transport's DialContext timeout is part of this overall timeout.
 		Timeout: 15 * time.Second,
 	}
 
