@@ -40,10 +40,9 @@ func main() {
 				// By creating a new resolver for each Dial, we signal our intent
 				// to avoid any long-lived resolver-level caches within the Go program.
 				resolver := net.Resolver{}
-				log.Printf("Performing fresh DNS lookup for %s", host)
 				addrs, err := resolver.LookupHost(ctx, host)
 				if err != nil {
-					return nil, fmt.Errorf("dns lookup failed: %w", err)
+					return nil, err
 				}
 				if len(addrs) == 0 {
 					return nil, fmt.Errorf("no addresses found for %s", host)
