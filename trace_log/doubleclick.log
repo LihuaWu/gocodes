@@ -1,0 +1,102 @@
+± |main ✓| → tr': strace -e trace=network ./http-client https://bid.g.doubleclick.net
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=2005427, si_uid=0} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=2005427, si_uid=0} ---
+Fetching URL: https://bid.g.doubleclick.net (HTTP/2 enabled: true)
+
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("172.20.0.10")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(37475), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("172.20.0.10")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("172.20.0.10")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(34482), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(53), sin_addr=inet_addr("172.20.0.10")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.115.155")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(39980), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.115.155")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("142.250.31.155")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(49525), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("142.250.31.155")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("64.233.180.155")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(57644), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("64.233.180.155")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.122.156")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(56891), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.122.156")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("64.233.180.157")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(55859), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("64.233.180.157")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("142.250.31.156")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(42595), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("142.250.31.156")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.63.155")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(53106), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.63.155")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.63.154")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(36261), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.63.154")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("142.251.111.154")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(53586), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("142.251.111.154")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("64.233.180.156")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(47382), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("64.233.180.156")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("192.178.218.154")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(44629), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("192.178.218.154")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.122.155")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(46815), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.122.155")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("192.178.218.156")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(43729), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("192.178.218.156")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("64.233.180.154")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(33467), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("64.233.180.154")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.115.156")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(46079), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("172.253.115.156")}, [112->16]) = 0
+socket(AF_INET, SOCK_DGRAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+setsockopt(6, SOL_SOCKET, SO_BROADCAST, [1], 4) = 0
+connect(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("142.251.111.155")}, 16) = 0
+getsockname(6, {sa_family=AF_INET, sin_port=htons(56176), sin_addr=inet_addr("10.28.54.152")}, [112->16]) = 0
+getpeername(6, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("142.251.111.155")}, [112->16]) = 0
+socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, IPPROTO_IP) = 6
+connect(6, {sa_family=AF_INET, sin_port=htons(443), sin_addr=inet_addr("172.253.115.155")}, 16) = -1 EINPROGRESS (Operation now in progress)
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=2005427, si_uid=0} ---
+--- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=2005427, si_uid=0} ---
+Status: 200 OK
+Status Code: 200
++++ exited with 0 +++

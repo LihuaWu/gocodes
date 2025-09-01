@@ -78,5 +78,5 @@ func main() {
 		// If there's an error reading the response body, log it and exit.
 		log.Fatalf("Error reading response body: %v", err)
 	}
-	time.Sleep(time.Second * 2)
+	time.Sleep(time.Second * 5)
 }
