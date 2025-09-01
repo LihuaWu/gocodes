@@ -49,5 +49,5 @@ func makeRequest(url string) error {
 		// If there's an error reading the response body, log it and exit.
 		log.Fatalf("Error reading response body: %v", err)
 	}
-
+	return nil
 }
